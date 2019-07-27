@@ -1,27 +1,43 @@
 .root {
-  background: #eeeeee
+  background: #eeeeee;
 }
 
 .app {
   display: flex;
   flex-direction: row;
-  justify-content: center
-}
-
-.cardHeader {
-  color: #666666
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .card {
-  margin: 1rem;
-  padding: 1rem;
-  overflow: auto;
+  position: relative;
+  display: flex;
+  flex-direction: column;
   height: 40rem;
   width: 20rem;
+  margin: 1rem;
+  padding: 1rem;
+
   background: #ffffff;
-  border: 1px solid #cccccc
+  border: 1px solid #cccccc;
 }
 
-.listItem {
-  text-align: center;
+.cardHeader {
+  margin-top: 0;
+  color: #666666;
+}
+
+.cardContent {
+  flex: 1;
+  overflow: auto;
+}
+
+.cardProgress {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 0);
+  bottom: 0;
+  padding: 0.5rem 1rem;
+  background-color: rgba(5, 141, 5, 0.8);
+  color: white;
 }
