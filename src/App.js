@@ -16,8 +16,8 @@ function Card(props) {
 }
 
 function App() {
-  const [currencies, setCurrencies] = useState(JSON.parse(localStorage.getItem('currencies')));
-  const [changes, setChanges] = useState(JSON.parse(localStorage.getItem('changes')));
+  const [currencies, setCurrencies] = useState(JSON.parse(localStorage.getItem('currencies')) || []);
+  const [changes, setChanges] = useState(JSON.parse(localStorage.getItem('changes')) || []);
   const inputRef = useRef();
 
   useEffect(() => {
