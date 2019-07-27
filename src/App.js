@@ -16,8 +16,8 @@ function Card(props) {
 }
 
 function App() {
-  const [currencies, setCurrencies] = useState([]);
-  const [changes, setChanges] = useState([]);
+  const [currencies, setCurrencies] = useState(JSON.parse(localStorage.getItem('currencies')));
+  const [changes, setChanges] = useState(JSON.parse(localStorage.getItem('changes')));
   const inputRef = useRef();
 
   useEffect(() => {
@@ -26,6 +26,11 @@ function App() {
       setChanges(values)
     );
   }, [inputRef]);
+
+  useEffect(() => {
+    localStorage.setItem('currencies', JSON.stringify(currencies));
+    localStorage.setItem('changes', JSON.stringify(changes));
+  })
 
   const formatPercent = value => (value * 100).toFixed(4) + "%";
 
